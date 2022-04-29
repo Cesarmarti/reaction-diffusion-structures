@@ -85,10 +85,10 @@ function main(){
     		cancelAnimationFrame(requstFrame);
     		drawVolumeCubes(gl,current_tex,500,canvas,false);
     	}else{
-    		drawVolumeCubes(gl,current_tex,200,canvas,true)
+    		drawVolumeCubes(gl,current_tex,150,canvas,true)
     	}
     })
-    drawVolumeCubes(gl,current_tex,200,canvas,false)
+    drawVolumeCubes(gl,current_tex,150,canvas,true)
     //drawVolumeSlices(gl,current_tex,canvas)
 }	
 
@@ -130,7 +130,7 @@ function drawVolumeSlices(gl,current_tex,canvas){
 }
 
 var THETA = 0;
-var PHI = 0;
+var PHI = -1.1;
 var time_old = 0;
 
 
@@ -216,6 +216,7 @@ function drawVolumeCubes(gl,current_tex,DIMENSIONS,canvas,animate){
 	           dX *= AMORTIZATION, dY*=AMORTIZATION;
 	           THETA+=dX, PHI+=dY;
 	        }
+	        console.log(PHI);
 	        reset_Mmatrix(mov_matrix);
 	        rotateY(mov_matrix, THETA);
 	        rotateX(mov_matrix, PHI);
