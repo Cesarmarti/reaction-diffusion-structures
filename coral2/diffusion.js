@@ -404,7 +404,7 @@ function initialStateTest(dimension){
 function initialState2D(dimension){
 	//first layer has starting position
 	var state = new Float32Array(4 * dimension * dimension*dimension);
-	for(var z = 0;z<dimension;z++){
+	for(var z = 0;z<1;z++){
 		for (var y=0; y<dimension; y++) {
 			for (var x=0; x<dimension; x++) {
 				var i = z*dimension*dimension + dimension*y + x;
